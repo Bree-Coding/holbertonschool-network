@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Opens a TCP port 98 on localhost and listens for connections
+nc -l localhost 98
