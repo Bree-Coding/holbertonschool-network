@@ -1,0 +1,97 @@
+# 🌐 What Really Happens When You Type `https://www.google.com` and Hit Enter?
+
+As a web development student, I’ve always found it fascinating to understand what really goes on behind the scenes when you browse the web. This article is my step-by-step explanation of everything that happens when you type a URL like `https://www.google.com` in your browser and press Enter.
+
+It may look simple, but there's a lot happening under the hood — from DNS to web servers, load balancers, SSL encryption, and even database calls. Here’s my breakdown 👇
+
+---
+
+## 1️⃣ DNS Request – Finding the IP Address 🕵️‍♂️
+
+When I type `www.google.com` in the browser, the first thing that happens is a **DNS (Domain Name System)** request. DNS is like the phonebook of the internet. It translates the domain name into an IP address — like `142.250.64.68` — that the browser can use to find the right server.
+
+My computer first checks if it already knows the IP address (DNS cache). If not, it asks a DNS resolver (usually from my internet provider), which contacts several DNS servers to get the answer.
+
+---
+
+## 2️⃣ TCP/IP – Starting the Connection 🤝
+
+Once the IP address is found, my computer uses **TCP/IP protocols** to connect to the server. This happens using a process called the **three-way handshake**:
+
+1. My device sends a SYN request.
+2. The server replies with SYN-ACK.
+3. My device sends back an ACK.
+
+Now the connection is ready to send data — like asking for the Google homepage.
+
+---
+
+## 3️⃣ Firewall – Checking the Traffic 🔥🛡️
+
+During this process, the request goes through several **firewalls** (on my computer, router, ISP, and even Google’s systems). Firewalls are there to block dangerous or unauthorized traffic. If my request is clean, it passes through.
+
+---
+
+## 4️⃣ HTTPS/SSL – Securing the Connection 🔒
+
+Because I typed `https://`, the connection is secure. My browser and Google’s server use **SSL/TLS encryption** to protect the data.
+
+Here’s what happens:
+
+* The browser checks Google’s **SSL certificate** to make sure it’s legit.
+* If the certificate is valid, both sides create a shared **encryption key**.
+* Now all communication is **private and secure**.
+
+This is important when using sensitive data like passwords or personal info.
+
+---
+
+## 5️⃣ Load Balancer – Choosing the Best Server ⚖️🌍
+
+Google has **tons of servers** all over the world. A **load balancer** helps direct my request to the best one — usually the closest or the least busy server.
+
+This helps make Google fast and reliable even when millions of people are using it at the same time.
+
+---
+
+## 6️⃣ Web Server – Receiving the Request 🖥️
+
+The server that receives my request is running a **web server** (like Nginx or Apache). The web server’s job is to accept the request and figure out what to do next — for example, it sees that I want the homepage and prepares to send the content.
+
+---
+
+## 7️⃣ Application Server – Running Logic 🧠
+
+Behind the scenes, there’s also an **application server**. This part contains the logic of the website — things like handling my login, searching, or showing personalized content.
+
+It may be built using languages like Python, Node.js, Go, or Java.
+
+---
+
+## 8️⃣ Database – Accessing Data 🗄️
+
+If I’m logged into Google, or searching something, the app server may talk to a **database** to get data — like my previous search history or recommended results.
+
+Databases store and organize this information so the app server can build a custom response for me.
+
+---
+
+## 9️⃣ Browser – Rendering the Page 🖌️
+
+Finally, the response is sent back to my browser:
+
+* It receives HTML, CSS, and JavaScript.
+* It builds the **DOM tree**.
+* It loads images, fonts, and other assets.
+* It runs JavaScript to make the page interactive.
+
+And voilà! I see Google’s homepage in my browser — all in less than a second. 🚀
+
+---
+
+## 🏁 Conclusion
+
+Even though it feels like just a simple Enter key press, a lot of steps happen to make the web work smoothly and securely.
+
+Writing this helped me understand better how **DNS, TCP/IP, firewalls, HTTPS, load balancers, web and application servers, and databases** work together. It’s a great example of how everything in web development is connected! 🌟
+
